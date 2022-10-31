@@ -1,21 +1,9 @@
 *** Settings ***
 Library     SeleniumLibrary
-Library    XML
-Library    String
 
 *** Variables ***
 ${browser}  chrome
 ${url}  https://www.saucedemo.com/
-
-*** Test Cases ***
-LoginTest    
-    open browser    ${url}   ${browser}
-    Maximize Browser Window
-    loginToApplication
-    Should Be Equal    standard_user    standard_user    
-    Should Be Equal    secret_sauce    secret_sauce	
-    Title Should Be    Swag Labs
-    [Teardown]    Close Browser
 
 *** Keywords ***
 loginToApplication
@@ -36,3 +24,12 @@ loginToApplication
     click element   xpath://button[@id='finish']
     Element Should Contain    xpath://span[@class='title']    CHECKOUT: COMPLETE!
     
+*** Test Cases ***
+LoginTest    
+    open browser    ${url}   ${browser}
+    Maximize Browser Window
+    loginToApplication
+    Should Be Equal    standard_user    standard_user    
+    Should Be Equal    secret_sauce    secret_sauce	
+    Title Should Be    Swag Labs
+    [Teardown]    Close Browser
