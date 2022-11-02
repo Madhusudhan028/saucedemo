@@ -13,10 +13,10 @@ Open Application
     Maximize Browser Window
 
 Sign-in to Web Application
-    input text  id:user-name    standard_user
-    Should Be Equal    standard_user    standard_user
-    input password  id:password    secret_sauce
-    Should Be Equal    secret_sauce    secret_sauce	
+    input text  //input[@id='user-name']    standard_user
+    Textfield Value Should Be    //input[@id='user-name']    standard_user
+    input password  //input[@id='password']   secret_sauce
+    Textfield Value Should Be    //input[@id='password']    secret_sauce
     click element   xpath://input[@id='login-button']   
 
 Purchase Section
