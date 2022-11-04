@@ -11,6 +11,7 @@ ${url}  https://www.saucedemo.com/
 Open Application    
     open browser    ${url}   ${browser}
     Maximize Browser Window
+    Set Selenium Speed  0.07seconds
 
 Sign-in to Web Application
     input text  //input[@id='user-name']    standard_user
@@ -43,7 +44,7 @@ Purchase Completion
     Element Should Contain    xpath://span[@class='title']    CHECKOUT: COMPLETE!
     
 *** Test Cases ***
-Login End-to-end Saucedemo  
+Login End-to-end Saucedemo 
     Title Should Be    Swag Labs
     Sign-in to Web Application
     Purchase Section  
